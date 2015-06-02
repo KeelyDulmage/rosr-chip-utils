@@ -254,7 +254,7 @@ config$vsn<-(config$algorithms$betweenArray=="vsn")
 Dummy=newMadbSet(Slides.raw)
 FILENAME<-paste(config$files$expDir, "/", "boxPlotRaw.png",sep="")
 png(FILENAME, width=7, height=7, units="in", res=300)
-drawBoxplot(Dummy, log2.transform = TRUE,main=paste(config$experiment,"Raw Data"))
+boxplot(Dummy, log2.transform = TRUE,main=paste(config$experiment,"Raw Data"))
 dev.off()
 @
 
@@ -275,7 +275,7 @@ Slides.raw.bg$G[Slides.raw.bg$G<1e-9] = 1e-9
 if(!config$vsn) {
   FILENAME<-paste(config$files$expDir, "/", "boxPlotBg.png",sep="")
   png(FILENAME, width=7, height=7, units="in", res=300)
-  drawBoxplot(Dummy, log2.transform = TRUE,main=paste(config$experiment,"background corrected data"))
+  boxplot(Dummy, log2.transform = TRUE,main=paste(config$experiment,"background corrected data"))
   dev.off()
 }
 @
@@ -324,7 +324,7 @@ if(!config$vsn) {
 	Dummy<-newMadbSet(Slides.norm)
 	FILENAME<-paste(config$files$expDir, "/", "boxPlotWA.png",sep="")
 	png(FILENAME, width=7, height=7, units="in", res=300)
-	drawBoxplot(Dummy, log2.transform = TRUE,main=paste(config$experiment,"within array normalized data"))
+	boxplot(Dummy, log2.transform = TRUE,main=paste(config$experiment,"within array normalized data"))
 	dev.off()
 }
 @
@@ -368,7 +368,7 @@ using a boxplot.
 Dummy<-newMadbSet(Slides.norm.ban)
 BOX3=paste(config$files$expDir, "/", "boxPlotBAN.png",sep="")
 png(BOX3, width=7, height=7, units="in", res=300)
-drawBoxplot(Dummy, log2.transform = TRUE,main=paste(config$experiment,"between array normalized data"))
+boxplot(Dummy, log2.transform = TRUE,main=paste(config$experiment,"between array normalized data"))
 dev.off()
 @
 \begin{figure}[htb!]
@@ -479,4 +479,3 @@ cat("Time to generate document: ", end_time - start_time,'\n')
 @
 
 \end{document}
-
